@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player with Animations</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="music-player">
+            <div class="visualization-container">
+                <canvas id="visualization"></canvas>
+                <div class="album-art">
+                    <img id="album-cover" src="default-album.jpg" alt="Album Cover">
+                </div>
+            </div>
+            
+            <div class="music-info">
+                <h2 id="title">Song Title</h2>
+                <p id="artist">Artist Name</p>
+                
+                <div class="progress-area">
+                    <div class="progress-bar">
+                        <span></span>
+                    </div>
+                    <div class="timer">
+                        <span id="current-time">0:00</span>
+                        <span id="max-duration">0:00</span>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <i id="prev" class="fas fa-step-backward"></i>
+                    <i id="play-pause" class="fas fa-play"></i>
+                    <i id="next" class="fas fa-step-forward"></i>
+                </div>
+                
+                <div class="volume-container">
+                    <i id="volume-icon" class="fas fa-volume-up"></i>
+                    <div class="volume-slider">
+                        <input type="range" min="0" max="100" value="80" id="volume">
+                    </div>
+                </div>
+                
+                <div class="music-list-toggle">
+                    <i class="fas fa-list"></i>
+                </div>
+            </div>
+            
+            <div class="music-source-selector">
+                <button id="local-music-btn" class="source-btn active">Local Music</button>
+                <button id="online-music-btn" class="source-btn">Online Music</button>
+                <input type="file" id="local-file-input" accept="audio/*" multiple hidden>
+                <button id="add-music-btn"><i class="fas fa-plus"></i> Add Music</button>
+            </div>
+            
+            <div class="music-list">
+                <div class="header">
+                    <div class="row">
+                        <i class="fas fa-times"></i>
+                        <span>Music List</span>
+                    </div>
+                </div>
+                <ul>
+                    <!-- Songs will be added here dynamically -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
